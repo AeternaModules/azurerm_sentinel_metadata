@@ -53,7 +53,7 @@ EOT
     threat_analysis_techniques = optional(list(string))
     dependency                 = optional(string)
     custom_version             = optional(string)
-    content_schema_version     = optional(string, "2.0")
+    content_schema_version     = optional(string) # Default: "2.0"
     icon_id                    = optional(string)
     version                    = optional(string)
     author = optional(object({
