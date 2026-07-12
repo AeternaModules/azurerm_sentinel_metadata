@@ -1,3 +1,7 @@
+output "sentinel_metadatas_id" {
+  description = "Map of id values across all sentinel_metadatas, keyed the same as var.sentinel_metadatas"
+  value       = { for k, v in azurerm_sentinel_metadata.sentinel_metadatas : k => v.id }
+}
 output "sentinel_metadatas_author" {
   description = "Map of author values across all sentinel_metadatas, keyed the same as var.sentinel_metadatas"
   value       = { for k, v in azurerm_sentinel_metadata.sentinel_metadatas : k => v.author }
