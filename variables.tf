@@ -1,6 +1,6 @@
-variable "sentinel_metadatas" {
+variable "sentinel_metadata" {
   description = <<EOT
-Map of sentinel_metadatas, attributes below
+Map of sentinel_metadata, attributes below
 Required:
     - content_id
     - kind

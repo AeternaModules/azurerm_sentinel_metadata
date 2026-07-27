@@ -1,5 +1,5 @@
-resource "azurerm_sentinel_metadata" "sentinel_metadatas" {
-  for_each = var.sentinel_metadatas
+resource "azurerm_sentinel_metadata" "sentinel_metadata" {
+  for_each = var.sentinel_metadata
 
   content_id                 = each.value.content_id
   kind                       = each.value.kind
