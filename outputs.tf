@@ -4,11 +4,11 @@ output "sentinel_metadata_id" {
 }
 output "sentinel_metadata_author" {
   description = "Map of author values across all sentinel_metadata, keyed the same as var.sentinel_metadata"
-  value       = { for k, v in azurerm_sentinel_metadata.sentinel_metadata : k => v.author if v.author != null && length(v.author) > 0 }
+  value       = { for k, v in azurerm_sentinel_metadata.sentinel_metadata : k => one(v.author) if v.author != null && length(v.author) > 0 }
 }
 output "sentinel_metadata_category" {
   description = "Map of category values across all sentinel_metadata, keyed the same as var.sentinel_metadata"
-  value       = { for k, v in azurerm_sentinel_metadata.sentinel_metadata : k => v.category if v.category != null && length(v.category) > 0 }
+  value       = { for k, v in azurerm_sentinel_metadata.sentinel_metadata : k => one(v.category) if v.category != null && length(v.category) > 0 }
 }
 output "sentinel_metadata_content_id" {
   description = "Map of content_id values across all sentinel_metadata, keyed the same as var.sentinel_metadata"
@@ -64,11 +64,11 @@ output "sentinel_metadata_providers" {
 }
 output "sentinel_metadata_source" {
   description = "Map of source values across all sentinel_metadata, keyed the same as var.sentinel_metadata"
-  value       = { for k, v in azurerm_sentinel_metadata.sentinel_metadata : k => v.source if v.source != null && length(v.source) > 0 }
+  value       = { for k, v in azurerm_sentinel_metadata.sentinel_metadata : k => one(v.source) if v.source != null && length(v.source) > 0 }
 }
 output "sentinel_metadata_support" {
   description = "Map of support values across all sentinel_metadata, keyed the same as var.sentinel_metadata"
-  value       = { for k, v in azurerm_sentinel_metadata.sentinel_metadata : k => v.support if v.support != null && length(v.support) > 0 }
+  value       = { for k, v in azurerm_sentinel_metadata.sentinel_metadata : k => one(v.support) if v.support != null && length(v.support) > 0 }
 }
 output "sentinel_metadata_threat_analysis_tactics" {
   description = "Map of threat_analysis_tactics values across all sentinel_metadata, keyed the same as var.sentinel_metadata"
